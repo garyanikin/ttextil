@@ -1,0 +1,342 @@
+/* Общие стили и стилизация главной страницы */
+
+:root {
+  --font-scale: 1.4;
+  --mobile-scale: 1.4;
+  --fontSize-default: 20px;
+}
+
+body {
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: var(--fontSize-default);
+  line-height: 1.2;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1440px) {
+  body {
+    font-size: calc(var(--fontSize-default) * 1.25);
+  }
+}
+
+/* HEADER */
+
+header .header {
+  display: flex;
+}
+
+header .header div {
+  flex: 1 1;
+}
+
+header .header .logo {
+  text-align: center;
+}
+
+header .logo img {
+  width: 600px;
+}
+
+header .contact {
+  text-align: right;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  padding-inline-start: 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+header nav ul li {
+  line-height: 3rem;
+  flex: 1 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+header nav ul li a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+header .contact .phone {
+  font-size: calc(var(--font-scale) * 1.2rem);
+}
+
+header .contact .red-button a {
+  font-weight: 400;
+  /* TODO DM Mono font */
+  /* font-family: "DM Mono"; */
+  line-height: 1.1;
+  color: #ffffff;
+  background: #ff0256;
+  display: inline-block;
+  border-radius: 99rem;
+  padding-top: 0.8rem;
+  padding-right: 2rem;
+  padding-bottom: 0.8rem;
+  padding-left: 2rem;
+  filter: drop-shadow(0.2rem 0.2rem 0.7rem rgba(255, 4, 86, 0.6));
+  color: white !important;
+  text-decoration: none;
+  transition: opacity 0.2s, filter 0.2s;
+}
+
+header .contact .red-button a:hover {
+  text-decoration: underline;
+  opacity: 0.75;
+}
+
+header .contact .red-button a:active {
+  opacity: 0.6;
+  filter: drop-shadow(0.1rem 0.1rem 0.3rem rgba(255, 4, 86, 0.1));
+}
+
+/* SECTIONS */
+
+section {
+  padding: 1rem 0 1.75rem;
+}
+
+/* BUTTONS */
+
+a.button {
+  text-align: center;
+  line-height: 1.3;
+  color: #000000;
+  display: inline-block;
+  border-color: rgba(0, 0, 0, 0.85);
+  border-style: solid;
+  border-radius: 999rem;
+  padding-top: 0.6rem;
+  padding-right: 1.4rem;
+  padding-bottom: 0.6rem;
+  padding-left: 1.3rem;
+  border-width: 0.2rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+a.button:hover {
+  text-decoration: underline;
+}
+
+/* GALLERY */
+section.catalog-gallery {
+  text-align: center;
+}
+
+section.catalog-gallery .gallery {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 4rem;
+  padding-bottom: 1.75rem;
+}
+
+section.catalog-gallery .gallery > a.div {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+section.catalog-gallery .gallery > .div:hover img {
+  transition-duration: 1s;
+  transform: scale(1.4);
+}
+
+section.catalog-gallery .gallery > .div:hover span {
+  text-decoration: underline;
+}
+
+section.catalog-gallery .gallery .img {
+  width: 100%;
+  flex: 1 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  filter: drop-shadow(0.4rem 0.4rem 0.8rem rgba(0, 0, 0, 0.15));
+}
+
+section.catalog-gallery .gallery .img img {
+  width: 100%;
+  transition: transform 0.2s ease-out;
+}
+
+section.catalog-gallery .gallery span {
+  padding-top: 0.75rem;
+  display: inline-block;
+  width: 100%;
+  color: black;
+}
+
+/* PROMO */
+
+section.promo {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+/* ABOUT */
+
+section.about {
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* ARTICLES */
+
+section.articles {
+  text-align: center;
+}
+
+section.articles .wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 2fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 1.25rem;
+  grid-row-gap: 0px;
+  padding-bottom: 1.75rem;
+}
+
+section.articles article {
+  display: flex;
+  flex-direction: column;
+}
+
+section.articles article img {
+  flex: 1 1;
+  width: 100%;
+}
+
+/* DELIVERY */
+
+.delivery .wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 0px;
+}
+
+section.delivery h3 {
+  text-align: center;
+}
+
+/* CONTACTS */
+
+section.contacts .wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+section.contacts .wrapper .address,
+section.contacts .wrapper div:nth-child(1) {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+section.contacts .wrapper .order,
+section.contacts .wrapper div:nth-child(2) {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+section.contacts .wrapper .order .wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+section.contacts .wrapper .order .wrapper div {
+  line-height: 2;
+}
+
+section.contacts .wrapper div:nth-child(3) {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+section.contacts .wrapper div:nth-child(4) {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+section.contacts .wrapper div:nth-child(5) {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+section.contacts .wrapper div:nth-child(5),
+section.contacts .wrapper .map {
+  grid-area: 2 / 2 / 5 / 3;
+}
+
+section.contacts .wrapper .map {
+  position: relative;
+  overflow: hidden;
+  border: 0.15rem black dashed;
+}
+
+section.contacts .wrapper .map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+section.contacts .address div {
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+
+/* FOOTER */
+
+footer {
+  padding-top: 1rem;
+}
+
+footer .top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 4fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+footer .top div:nth-child(3) {
+  text-align: right;
+}
+
+footer .info {
+  padding-bottom: 4rem;
+}
+
+footer .bottom {
+  text-align: center;
+}
+
+footer .bottom img {
+  width: 500px;
+}
